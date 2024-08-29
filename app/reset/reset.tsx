@@ -74,7 +74,7 @@ const Reset = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:3333/verify/shortcode?id=${userId}`, {
+      const response = await fetch(`https://dbuprm-backend-1.onrender.com/verify/shortcode?id=${userId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -18,7 +18,7 @@ export interface User {
 
 export async function fetchUsersByYear(endYear: string): Promise<User[]> {
   try {
-    const response = await fetch(`http://localhost:3333/pcuser/year?endYear=${endYear}`);
+    const response = await fetch(`https://dbuprm-backend-1.onrender.com/pcuser/year?endYear=${endYear}`);
     if (!response.ok) {
       throw new Error('Failed to fetch users');
     }
@@ -30,13 +30,13 @@ export async function fetchUsersByYear(endYear: string): Promise<User[]> {
 }
 
 export const fetchUsers = async (): Promise<User[]> => {
-  const response = await fetch('http://localhost:3333/pcuser/get');
+  const response = await fetch('https://dbuprm-backend-1.onrender.com/pcuser/get');
   if (!response.ok) throw new Error("Failed to fetch users");
   return response.json();
 };
 export async function trashUsersByYear(endYear: string): Promise<void> {
   try {
-    const response = await fetch(`http://localhost:3333/pcuser/trash/year/${endYear}`, {
+    const response = await fetch(`https://dbuprm-backend-1.onrender.com/pcuser/trash/year/${endYear}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ endYear }),
@@ -52,7 +52,7 @@ export async function trashUsersByYear(endYear: string): Promise<void> {
 
 export async function trashUsersByUserId(userId: string): Promise<void> {
   try {
-    const response = await fetch(`http://localhost:3333/pcuser/trash/user?userId=${userId}`, {
+    const response = await fetch(`https://dbuprm-backend-1.onrender.com/pcuser/trash/user?userId=${userId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ userId }),
@@ -68,7 +68,7 @@ export async function trashUsersByUserId(userId: string): Promise<void> {
 
 export async function restoreUsersByYear(endYear: string): Promise<void> {
   try {
-    const response = await fetch(`http://localhost:3333/pcuser/restore?year=${endYear}`, {
+    const response = await fetch(`https://dbuprm-backend-1.onrender.com/pcuser/restore?year=${endYear}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ endYear }),

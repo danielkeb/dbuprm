@@ -28,7 +28,7 @@ const Visualization: React.FC = () => {
 
   const fetchSecurity = async () => {
     try {
-      const response = await axios.get(`${Config.ROOT_URL}//auth/get`);
+      const response = await axios.get(`${Config.ROOT_URL}/auth/get`);
       setSecurity(response.data);
     } catch (error) {
       if (axios.isCancel(error)) {

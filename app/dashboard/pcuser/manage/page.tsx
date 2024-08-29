@@ -187,7 +187,7 @@ const UserManagePage = () => {
               <td className="p-4 border">Serial {user.serialnumber}</td>
               <td className="p-4 border">{user.gender}</td>
               <td className="p-4 border">
-                <img src={`http://localhost:3333/pcuser/${user.image}`} alt={user.firstname} width ={200} height={200} className="w-24 h-24" />
+                <img src={`https://dbuprm-backend-1.onrender.com/pcuser/${user.image}`} alt={user.firstname} width ={200} height={200} className="w-24 h-24" />
               </td>
               {/* <td className="p-4 border">
                 <Barcode filename={user.barcode} />

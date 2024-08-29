@@ -22,7 +22,7 @@ const Login = () => {
     e.preventDefault();
     setError('');
 
-    const response = await fetch(`${Config.ROOT_URL}/auth/signin`, {
+    const response = await fetch('https://dbuprm-backend-1.onrender.com/auth/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const Login = () => {
     e.preventDefault();
     setForgotError('');
 
-    const response = await fetch(`${Config.ROOT_URL}/auth/forget/shortcode`, {
+    const response = await fetch('https://dbuprm-backend-1.onrender.com/auth/forget/shortcode', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
