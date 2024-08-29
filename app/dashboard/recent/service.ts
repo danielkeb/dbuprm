@@ -5,7 +5,7 @@ export interface Action {
     createdAT: string;
   }
   
-  const BASE_URL = "http://localhost:3333/pcuser";
+  const BASE_URL = "https://dbuprm-backend-1.onrender.com/pcuser";
   
   export const fetchRecentActions = async (): Promise<Action[]> => {
     const response = await fetch(`${BASE_URL}/action`);

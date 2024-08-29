@@ -38,7 +38,7 @@ const Register = () => {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await fetch("http://localhost:3333/auth/signup", {
+        const response = await fetch("https://dbuprm-backend-1.onrender.com/auth/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

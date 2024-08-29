@@ -1,6 +1,6 @@
 import { error } from "console";
 
-const ROOTURL="http://localhost:3333/pcuser"
+const ROOTURL="https://dbuprm-backend-1.onrender.com/pcuser"
 
 export const fetchUser=async (scannedId: string)=>{
 

@@ -29,7 +29,7 @@ function Manage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3333/auth/getAllSecurity")
+      .get("https://dbuprm-backend-1.onrender.com/auth/getAllSecurity")
       .then((response) => {
         setData(response.data);
       })
@@ -54,10 +54,10 @@ function Manage() {
     }
 
     try {
-      await axios.delete(`http://localhost:3333/auth/user/delete?id=${item.id}`);
+      await axios.delete(`https://dbuprm-backend-1.onrender.com/auth/user/delete?id=${item.id}`);
       
       // Re-fetch the updated data
-      const reFetch = await axios.get("http://localhost:3333/auth/getAllSecurity");
+      const reFetch = await axios.get("https://dbuprm-backend-1.onrender.com/auth/getAllSecurity");
       setData(reFetch.data);
       
       // Show success message
@@ -75,11 +75,11 @@ function Manage() {
   const handleSubmit = async (values: SecurityData) => {
     try {
       const res = await axios.patch(
-        `http://localhost:3333/auth/update?id=${values.id}`,
+        `https://dbuprm-backend-1.onrender.com/auth/update?id=${values.id}`,
         values
       );
       const reFetch = await axios.get(
-        "http://localhost:3333/auth/getAllSecurity"
+        "https://dbuprm-backend-1.onrender.com/auth/getAllSecurity"
       );
       setData(reFetch.data);
       setSuccessMessage(true);

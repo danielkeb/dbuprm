@@ -108,7 +108,7 @@ const UserListPage = () => {
                 <td className="p-4 border">{user.gender}</td>
                 <td className="p-4 border">
                   <img
-                    src={`http://localhost:3333/pcuser/${user.image}`}
+                    src={`https://dbuprm-backend-1.onrender.com/pcuser/${user.image}`}
                     alt={user.firstname}
                     className="w-24 h-24"
                   />

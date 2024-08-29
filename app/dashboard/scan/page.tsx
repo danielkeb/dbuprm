@@ -112,7 +112,7 @@ const Page = () => {
           <div className="rounded-lg p-6 bg-green-100 flex items-center justify-center mb-4 shadow-md w-full">
             <div className="flex-shrink-0">
               <img
-                src={`http://localhost:3333/pcuser/${userDetails.image}`}
+                src={`https://dbuprm-backend-1.onrender.com/pcuser/${userDetails.image}`}
                 alt={userDetails.firstname}
                 width={1000}
                 height={900}

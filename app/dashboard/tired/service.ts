@@ -112,7 +112,7 @@ export interface User {
 // Fetch Users by Year
 export async function fetchUsersByYear(endYear: string): Promise<User[]> {
   try {
-    const response = await fetchWithRetry(`http://localhost:3333/pcuser/year/tired?endYear=${endYear}`, {
+    const response = await fetchWithRetry(`https://dbuprm-backend-1.onrender.com/pcuser/year/tired?endYear=${endYear}`, {
       method: 'GET',
     });
 
@@ -158,7 +158,7 @@ export async function trashUsersByUserId(userId: string): Promise<void> {
 // Fetch All Users
 export const fetchUsers = async (): Promise<User[]> => {
   try {
-    const response = await fetchWithRetry('http://localhost:3333/pcuser/get/tired', {
+    const response = await fetchWithRetry('https://dbuprm-backend-1.onrender.com/pcuser/get/tired', {
       method: 'GET',
     });
 
@@ -179,7 +179,7 @@ export const fetchUsers = async (): Promise<User[]> => {
 // Restore Users by Year
 export async function restoreUsersByYear(endYear: string): Promise<void> {
   try {
-    const response = await fetchWithRetry(`http://localhost:3333/pcuser/restore?year=${endYear}`, {
+    const response = await fetchWithRetry(`https://dbuprm-backend-1.onrender.com/pcuser/restore?year=${endYear}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ endYear }),

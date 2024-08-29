@@ -38,7 +38,7 @@ export interface User {
   updatedAT: string;
 }
 
-const BASE_URL = "http://localhost:3333/pcuser";
+const BASE_URL = "https://dbuprm-backend-1.onrender.com/pcuser";
 
 // Utility Function to Handle HTTP Response
 const handleResponse = async (response: Response) => {
@@ -136,7 +136,7 @@ export const deleteUser = async (id: string): Promise<void> => {
 // Fetch Barcode Function
 export const fetchBarcode = async (filename: string): Promise<string> => {
   try {
-    const response = await fetch(`http://localhost:3333/pcuser/barcodes/${filename}`);
+    const response = await fetch(`https://dbuprm-backend-1.onrender.com/pcuser/barcodes/${filename}`);
     await handleResponse(response);
     return URL.createObjectURL(await response.blob());
   } catch (error) {

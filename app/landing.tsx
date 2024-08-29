@@ -43,7 +43,7 @@ export default function DrawerAppBar(props: Props) {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:3333/pcuser/visualize");
+      const response = await axios.get("https://dbuprm-backend-1.onrender.com/pcuser/visualize");
       setData(response.data);
     } catch {
       throw new Error("unable to fetch pc owners")

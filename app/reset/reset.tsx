@@ -40,7 +40,7 @@ const Reset = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:3333/verify/updatePassword?id=${userId}`, {
+      const response = await fetch(`https://dbuprm-backend-1.onrender.com/verify/updatePassword?id=${userId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

@@ -49,7 +49,7 @@ export interface User {
 }
 
 // Base URL for API requests
-const BASE_URL = "http://localhost:3333/auth";
+const BASE_URL = "https://dbuprm-backend-1.onrender.com/auth";
 
 // Utility Function to Handle HTTP Response
 const handleResponse = async (response: Response): Promise<any> => {
@@ -189,7 +189,7 @@ export const changeUserPassword = async (
   newPassword: string
 ) => {
   try {
-    const response = await axios.patch(`http://localhost:3333/auth/users/changepassword?id=${id}`, {
+    const response = await axios.patch(`https://dbuprm-backend-1.onrender.com/auth/users/changepassword?id=${id}`, {
       currentPassword,
       newPassword,
     });
