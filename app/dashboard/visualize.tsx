@@ -4,6 +4,7 @@ import { Bar, Pie } from 'react-chartjs-2';
 import { Chart, ArcElement, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
 import { useAppContext } from '@/components/UserContext';
 import RecentActionsPage from './recent/page';
+import Config from '@/config';
 
 Chart.register(ArcElement, BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
@@ -14,7 +15,7 @@ const Visualization: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:3333/pcuser/visualize');
+      const response = await axios.get(`${Config.ROOT_URL}/pcuser/visualize`);
       setData(response.data);
     } catch (error) {
       if (axios.isCancel(error)) {
@@ -27,7 +28,7 @@ const Visualization: React.FC = () => {
 
   const fetchSecurity = async () => {
     try {
-      const response = await axios.get('http://localhost:3333/auth/get');
+      const response = await axios.get(`${Config.ROOT_URL}//auth/get`);
       setSecurity(response.data);
     } catch (error) {
       if (axios.isCancel(error)) {
