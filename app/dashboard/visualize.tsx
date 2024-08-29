@@ -15,7 +15,7 @@ const Visualization: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`${Config.ROOT_URL}/pcuser/visualize`);
+      const response = await axios.get('https://dbuprm-backend.onrender.com/pcuser/visualize');
       setData(response.data);
     } catch (error) {
       if (axios.isCancel(error)) {
