@@ -135,8 +135,6 @@ export const fetchUser = async (id: string): Promise<User> => {
       alert("User not found.");
     } else if (error instanceof UnauthorizedError) {
       alert("You are not authorized to access this resource.");
-      // Optionally redirect to login page
-      // window.location.href = '/login';
     } else {
       alert("Could not fetch user details. Please try again later.");
     }
