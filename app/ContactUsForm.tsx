@@ -99,10 +99,10 @@ export default function ContactUsForm() {
                     Contact Information
                 </h2>
                 <p className="text-gray-600">
-                    Email: <a href="mailto:danielkebede381@gmail.com" className="text-blue-500 hover:underline">danielkebede381@gmail.com</a>
+                    Email: <a href="mailto:amydbu@gmail.com" className="text-blue-500 hover:underline">amydbu@gmail.com</a>
                 </p>
                 <p className="text-gray-600">
-                    Phone: <a href="tel:+251921154404" className="text-blue-500 hover:underline">+251 921 154 404</a>
+                    Phone: <a href="tel:+251116170797" className="text-blue-500 hover:underline">+251116170797</a>
                 </p>
                 <p className="text-gray-600">
                     Address: 445 Tebase sub-city, Debre birhan, Ethiopia
