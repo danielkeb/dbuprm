@@ -1,35 +1,30 @@
-import React, { useRef, FormEvent } from 'react'; // Import necessary React hooks and types
-import emailjs from 'emailjs-com'; // Import emailjs for sending emails
+import React, { useRef, FormEvent } from 'react'; 
+import emailjs from 'emailjs-com'; 
 
 export default function ContactUsForm() {
-    // Use useRef to create a reference for the form element with a proper type
     const formRef = useRef<HTMLFormElement | null>(null);
 
-    // Define the sendEmail function with explicit typing for the event parameter
     const sendEmail = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault(); // Prevent default form submission behavior
+        e.preventDefault();
 
-        if (!formRef.current) return; // Ensure formRef.current is not null
+        if (!formRef.current) return;
 
-        // Create a FormData object from the formRef's current value
         const formData = new FormData(formRef.current);
         const fullName = formData.get('fullName') as string;
         const email = formData.get('email') as string;
         const subject = formData.get('subject') as string;
         const body = formData.get('body') as string;
 
-        // Check if all required fields are filled
         if (!fullName || !email || !subject || !body) {
             alert('All fields are required.');
             return;
         }
 
-        // Send email using emailjs
         emailjs.sendForm('service_ndzugzd', 'template_ykotyhr', formRef.current, 'zBuzq55OXkC-D2cpq')
             .then((result) => {
                 console.log('Email successfully sent!', result.text);
                 alert('Message sent successfully!');
-                formRef.current?.reset(); // Reset the form after successful submission
+                formRef.current?.reset();
             }, (error) => {
                 console.error('Error sending email:', error);
                 alert('There was an error sending your message. Please try again later.');
@@ -37,11 +32,11 @@ export default function ContactUsForm() {
     };
 
     return (
-        <div className="flex justify-center items-center w-full p-4 m-2">
+        <div className="flex flex-col lg:flex-row justify-center items-center w-full p-4 m-2">
             <form
-                className="bg-white/50 backdrop-blur-sm p-6 rounded-lg shadow-lg w-full max-w-xl"
-                ref={formRef} // Assign formRef to the form element
-                onSubmit={sendEmail} // Bind the sendEmail function to the onSubmit event
+                className="bg-white/50 backdrop-blur-sm p-6 rounded-lg shadow-lg w-full max-w-lg lg:max-w-xl"
+                ref={formRef}
+                onSubmit={sendEmail}
                 method="POST"
             >
                 <h2 className="text-2xl font-semibold mb-4 text-center">Contact Us</h2>
@@ -89,12 +84,12 @@ export default function ContactUsForm() {
                 </div>
                 <button
                     type="submit"
-                    className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                    className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full"
                 >
                     Send Message
                 </button>
             </form>
-            <div className="mt-6 ml-10 text-center">
+            <div className="mt-6 lg:mt-0 lg:ml-10 text-center lg:text-left">
                 <h2 className="text-lg font-semibold text-gray-700 mb-2">
                     Contact Information
                 </h2>
@@ -107,7 +102,7 @@ export default function ContactUsForm() {
                 <p className="text-gray-600">
                     Address: 445 Tebase sub-city, Debre birhan, Ethiopia
                 </p>
-                <div className="flex justify-center mt-4 space-x-4">
+                <div className="flex justify-center lg:justify-start mt-4 space-x-4">
                     <a
                         href="https://www.facebook.com/dbu.edu.et"
                         className="text-blue-600 hover:text-blue-800"
